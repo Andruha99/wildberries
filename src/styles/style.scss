@@ -3,12 +3,14 @@ $product-name-color: #999;
 $price-color: #242424;
 $sale-color: #cb11ab;
 $text-color: #fff;
+
 @mixin footer-title {
   color: #fff;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.33333;
-  margin-top: 50px;
+  margin-top: 61px;
+  margin-bottom: 10.8px;
 }
 @mixin footer-list {
   color: hsla(0, 0%, 100%, 0.7);
@@ -17,13 +19,16 @@ $text-color: #fff;
   -webkit-transition: color 0.25s ease;
   transition: color 0.25s ease;
   cursor: pointer;
-  margin-top: 12px;
+  margin-top: 0px;
+  margin-bottom: 12px;
 }
+
 @mixin footer-middle {
   color: hsla(0, 0%, 100%, 0.8);
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
+  margin-top: 0px;
 }
 
 p,
@@ -38,6 +43,71 @@ li,
 table,
 div {
   font-family: "Roboto", sans-serif;
+}
+body {
+  margin: 0 0 0 0;
+}
+
+.footer-content-adaptive {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: auto;
+  align-items: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  @media (max-width: 653px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  @media (min-width: 1023px) {
+    display: none;
+  }
+  .footer-content-adaptive-left {
+    display: flex;
+    flex-direction: row;
+    @media (max-width: 653px) {
+      margin-bottom: 32px;
+    }
+    .footer-content-adaptive-left__appstore {
+      height: 47.99px;
+      width: 147.99px;
+      margin-right: 10px;
+    }
+    .footer-content-adaptive-left__google {
+      height: 47.99px;
+      width: 147.99px;
+      margin-right: 10px;
+    }
+    .footer-content-adaptive-left__appgalery {
+      height: 47.99px;
+      width: 147.99px;
+    }
+  }
+  .footer-content-adaptive-right {
+    .footer-content-adaptive-right__img {
+      width: 137.99px;
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+}
+.number {
+  border-bottom: 1px dashed;
+  white-space: nowrap;
+  color: hsla(0, 0%, 100%, 0.7);
+  border-color: hsla(0, 0%, 100%, 0.4);
+  border-bottom: 1px dashed;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.number:hover {
+  color: white;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: color;
 }
 
 .footer {
@@ -55,6 +125,95 @@ div {
     align-content: center;
     padding-left: 32px;
     padding-right: 32px;
+    @media (max-width: 1023px) {
+      width: 100%;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .accordion {
+      background-color: #481173;
+      border: none;
+      outline: none;
+      .accordion-body {
+        padding-left: 0px;
+      }
+      .accordion-button {
+        padding-left: 0px;
+      }
+
+      .accordion-button:focus {
+        border-color: red;
+        border: none;
+        box-shadow: none;
+      }
+
+      .accordion-item {
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+        border-top-color: 1px solid hsla(0, 0%, 100%, 0.2);
+        border-top-width: 1px;
+      }
+      @media (min-width: 1023px) {
+        display: none;
+      }
+      .accordion-button {
+        background-color: #481173;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.33333;
+        border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
+        border-top: none;
+        .accordion-button:focus {
+          border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
+        }
+        .accordion-button-active-bg {
+          color: #481173;
+          background-color: #481173;
+          border-color: #481173;
+          border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
+        }
+        .accordion-button-active-color {
+          color: #481173;
+          background-color: #481173;
+          border-color: #481173;
+          border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
+        }
+        .accordion-button-focus-border-color {
+          color: #481173;
+          background-color: #481173;
+          border-color: #481173;
+          border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
+        }
+        .accrdion-buto .accordion-button-focus-box-shadow {
+          color: #481173;
+          background-color: #481173;
+          border-color: #481173;
+        }
+      }
+      .accordion-body {
+        background-color: #481173;
+        border: none;
+        .accordion-body-list {
+          color: hsla(0, 0%, 100%, 0.7);
+          font-size: 18px;
+          line-height: 1.33333;
+          transition-duration: white 0.25s ease;
+          cursor: pointer;
+          border: none;
+        }
+        .accordion-body-list:hover {
+          color: white;
+          transition-duration: 0.25s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+          transition-property: color;
+          border: none;
+        }
+      }
+    }
+
     .footer-content-up {
       width: 100%;
       height: auto;
@@ -62,6 +221,9 @@ div {
       flex-direction: row;
       justify-content: space-between;
       margin-bottom: 40px;
+      @media (max-width: 1023px) {
+        display: none;
+      }
 
       .footer-content-up-first {
         width: 225px;
@@ -72,20 +234,65 @@ div {
         .footer-content-up-first__title {
           @include footer-title;
         }
+        .footer-content-up-first__payments {
+          @include footer-list;
+        }
+        .footer-content-up-first__payments:hover {
+          color: white;
+          transition-duration: 0.25s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+          transition-property: color;
+        }
         .footer-content-up-first__return {
           @include footer-list;
+        }
+        .footer-content-up-first__return:hover {
+          color: white;
+          transition-duration: 0.25s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+          transition-property: color;
         }
         .footer-content-up-first__rules {
           @include footer-list;
         }
+        .footer-content-up-first__rules:hover {
+          color: white;
+          transition-duration: 0.25s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+          transition-property: color;
+        }
         .footer-content-up-first__delivery {
           @include footer-list;
+        }
+        .footer-content-up-first__delivery:hover {
+          color: white;
+          transition-duration: 0.25s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+          transition-property: color;
         }
         .footer-content-up-first__moneyreturn {
           @include footer-list;
         }
+        .footer-content-up-first__moneyreturn:hover {
+          color: white;
+          transition-duration: 0.25s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+          transition-property: color;
+        }
         .footer-content-up-first__userrules {
           @include footer-list;
+        }
+        .footer-content-up-first__userrules:hover {
+          color: white;
+          transition-duration: 0.25s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+          transition-property: color;
         }
       }
       .footer-content-up-second {
@@ -100,17 +307,52 @@ div {
         .footer-content-up-second__sell {
           @include footer-list;
         }
+        .footer-content-up-second__sell:hover {
+          color: white;
+          transition-duration: 0.25s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+          transition-property: color;
+        }
         .footer-content-up-second__projects {
           @include footer-title;
+        }
+        .footer-content-up-second__projects:hover {
+          color: white;
+          transition-duration: 0.25s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+          transition-property: color;
         }
         .footer-content-up-second__guru {
           @include footer-list;
         }
+        .footer-content-up-second__guru:hover {
+          color: white;
+          transition-duration: 0.25s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+          transition-property: color;
+        }
         .footer-content-up-second__work {
           @include footer-list;
         }
+        .footer-content-up-second__work:hover {
+          color: white;
+          transition-duration: 0.25s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+          transition-property: color;
+        }
         .footer-content-up-second__things {
           @include footer-list;
+        }
+        .footer-content-up-second__things:hover {
+          color: white;
+          transition-duration: 0.25s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+          transition-property: color;
         }
       }
       .footer-content-up-third {
@@ -125,11 +367,32 @@ div {
         .footer-content-up-third__about {
           @include footer-list;
         }
+        .footer-content-up-third__about:hover {
+          color: white;
+          transition-duration: 0.25s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+          transition-property: color;
+        }
         .footer-content-up-third__contacts {
           @include footer-list;
         }
+        .footer-content-up-third__contacts:hover {
+          color: white;
+          transition-duration: 0.25s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+          transition-property: color;
+        }
         .footer-content-up-third__work {
           @include footer-list;
+        }
+        .footer-content-up-third__work {
+          color: white;
+          transition-duration: 0.25s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+          transition-property: color;
         }
       }
       .footer-content-up-fourth {
@@ -144,11 +407,32 @@ div {
         .footer-content-up-fourth__vk {
           @include footer-list;
         }
+        .footer-content-up-fourth__vk {
+          color: white;
+          transition-duration: 0.25s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+          transition-property: color;
+        }
         .footer-content-up-fourth__odnoklassniki {
           @include footer-list;
         }
+        .footer-content-up-fourth__odnoklassniki:hover {
+          color: white;
+          transition-duration: 0.25s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+          transition-property: color;
+        }
         .footer-content-up-fourth__youtube {
           @include footer-list;
+        }
+        .footer-content-up-fourth__youtube:hover {
+          color: white;
+          transition-duration: 0.25s;
+          transition-timing-function: ease;
+          transition-delay: 0s;
+          transition-property: color;
         }
       }
       .footer-content-up-fifth {
@@ -163,17 +447,20 @@ div {
         .footer-content-up-fifth__appstore {
           width: 147.98px;
           height: 47.99px;
-          margin-bottom: 19px;
-          margin-top: 19px;
+          margin-bottom: 11px;
+          margin-top: 0px;
+          cursor: pointer;
         }
         .footer-content-up-fifth__googleplay {
           width: 147.98px;
           height: 47.99px;
-          margin-bottom: 19px;
+          margin-bottom: 11px;
+          cursor: pointer;
         }
         .footer-content-up-fifth__appgallery {
           width: 149.98px;
           height: 48.99px;
+          cursor: pointer;
         }
       }
     }
@@ -183,6 +470,10 @@ div {
       border-top: 1px solid hsla(0, 0%, 100%, 0.2);
       padding-top: 40px;
       margin-bottom: 40px;
+      @media (max-width: 1023px) {
+        display: flex;
+        flex-direction: column;
+      }
       .footer-content-middle-left {
         width: 40%;
         height: auto;
@@ -190,6 +481,10 @@ div {
         flex-direction: column;
         justify-content: flex-start;
         margin-right: 30px;
+        @media (max-width: 1023px) {
+          width: 90%;
+          margin-right: 0px;
+        }
         .footer-content-middle-left__address {
           @include footer-middle;
           margin-bottom: 12px;
@@ -212,6 +507,10 @@ div {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        @media (max-width: 1023px) {
+          width: 90%;
+          margin-right: 0px;
+        }
         .footer-content-middle-right__person {
           @include footer-middle;
           margin-bottom: 12px;
@@ -239,26 +538,89 @@ div {
       justify-content: center;
       align-content: center;
       margin-bottom: 24px;
+      @media (max-width: 1023px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      @media (max-width: 540px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-content: left;
+      }
       .footer-content-down__copyright {
         @include footer-middle;
         align-self: center;
         display: flex;
         justify-content: center;
         text-align: center;
+        color: hsla(0, 0%, 100%, 0.8);
+        font-size: 14px;
+        color: hsla(0, 0%, 100%, 0.7);
+        font-size: 14px;
+        line-height: 1.42857;
+        @media (max-width: 1023px) {
+          display: none;
+        }
+      }
+      .footer-content-down__copyrightSmall {
+        @include footer-middle;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: hsla(0, 0%, 100%, 0.8);
+        font-size: 14px;
+        color: hsla(0, 0%, 100%, 0.7);
+        font-size: 14px;
+        line-height: 1.42857;
+        @media (max-width: 1023px) {
+          margin-right: 0px;
+          margin-bottom: 0px;
+          order: 2;
+          line-height: 14px;
+          display: flex;
+        }
+        @media (min-width: 1023px) {
+          display: none;
+        }
+        @media (max-width: 540px) {
+          align-self: flex-start;
+          margin-top: 15px;
+        }
       }
       .footer-content-down-images {
         display: flex;
         flex-direction: row;
         align-self: center;
         margin-top: 19px;
+        @media (max-width: 1023px) {
+          order: 1;
+          margin-top: 0px;
+        }
+        @media (max-width: 540px) {
+          align-self: flex-start;
+        }
+
         .footer-content-down-images__visa {
           width: 55px;
           height: 18px;
           margin-right: 10px;
+          margin-top: 0px;
+          cursor: pointer;
+          @media (min-width: 1023px) {
+            margin-top: 0px;
+          }
         }
         .footer-content-down-images__mastercard {
           width: 48px;
           height: 25px;
+          margin-top: 0px;
+          cursor: pointer;
+          @media (min-width: 1023px) {
+            margin-top: 0px;
+          }
         }
       }
     }
