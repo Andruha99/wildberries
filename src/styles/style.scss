@@ -7,3 +7,238 @@ $text-color: #fff;
 p, h1, h2, h3, h4, h5, h6, span, li, table, div {
     font-family: 'Roboto', sans-serif;
 }
+body{
+background-color: #999;
+}
+@import "./breakpoints.scss";
+// $main-color: #481173;
+// $product-name-color: #999;
+// $price-color: #242424;
+// $sale-color: #cb11ab;
+// $text-color: #fff;
+
+// p, h1, h2, h3, h4, h5, h6, span, li, table, div {
+//     font-family: 'Roboto', sans-serif;
+// }
+
+body {
+  background-color: rgb(173, 227, 211);
+}
+:root {
+  --gutter: 15px;
+  --color-light: #fff;
+  --color-dark: #000;
+  --color-primary: #610785;
+  --pink: #ca1cd3;
+  --dark-violet: #18081e;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+img {
+  vertical-align: top;
+}
+
+main {
+  background: linear-gradient(
+    90deg,
+    var(--pink) 15%,
+    var(--color-primary) 100%
+  );
+  width: 100%;
+  overflow: hidden;
+}
+
+.navbar {
+  padding: 20px 10px;
+
+  &__container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    width: 240px;
+    height: 64px;
+    box-sizing: border-box;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    @include breakpoint(md) {
+      width: 200px;
+
+      @include breakpoint(sm) {
+        display: none;
+      }
+    }
+  }
+
+  &__input {
+    width: 60%;
+    height: 50px;
+    padding: 10px 20px;
+    background-color: var(--color-light);
+    font-size: 20px;
+    border-radius: 30px;
+    opacity: 0.5;
+    transition: all 0.3s;
+   cursor: pointer;
+
+    @include breakpoint(xl) {
+      width: 50%;
+    }
+    @include breakpoint(lg) {
+      display: none;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+    &_active{
+      display: block;
+    }
+  }
+
+  &__burger {
+    display: block;
+    width: 48px;
+    height: 48px;
+    position: relative;
+    border: 0.1px solid var(--color-light);
+    border-radius: 8px;
+    cursor: pointer;
+    @include breakpoint(lg) {
+      display: none;
+    }
+    &-line {
+      display: block;
+      margin-left: 10%;
+      width: 80%;
+      height: 1px;
+      background: var(--color-light);
+      position: absolute;
+      padding: 2px;
+
+      &_first {
+        top: 7px;
+      }
+      &_second {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &_third {
+        bottom: 7px;
+      }
+    }
+    &:hover {
+      border: 3px solid var(--color-light);
+    }
+  }
+
+  &__cart {
+    background-color: inherit;
+    width: 55px;
+    height: 55px;
+
+    @include breakpoint(lg) {
+      position: fixed;
+        bottom: 3.5%;
+        right: 20%;
+        filter:  invert(40%);//меняет цвет png картинки
+    }
+    &-btn {
+      background-color: inherit;
+      width: 55px;
+      height: 55px;
+      @include breakpoint(md) {
+        width: 40px;
+      }
+    }
+  }
+  &__loop {
+    width: 45px;
+    height: 45px;
+    display: none;
+    cursor: pointer;
+    @include breakpoint(lg) {
+      display: block;
+    }
+    @include breakpoint(md) {
+      width: 30px;
+      height: 30px;
+    }
+    &_closed{
+      display: none;
+    }
+  }
+  &__loopAct {
+    display: none;
+    cursor: pointer;
+    @include breakpoint(lg) {
+      width: 45px;
+      height: 45px;
+      display: block;
+      position: fixed;
+      bottom: 4%;
+      left: 25%;
+     filter:  invert(40%);//меняет цвет png картинки
+    }
+    @include breakpoint(md) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+// !!!!!!! это для поиска товара в поисковой строке: ***************************************
+.elastic li{
+  transition: all ease 500ms;
+  }
+  .elastic li.hide{
+    display: none;
+  }
